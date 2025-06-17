@@ -1,0 +1,1174 @@
+<form action="https://formspree.io/f/xjvnqkqp" method="POST"></form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servimoto - Productos y Servicios para Motocicletas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header y navegación */
+        header {
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(25, 118, 210, 0.7), rgba(13, 71, 161, 0.7)), 
+                        url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80%27') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1976D2;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: #ffc107;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Productos */
+        .products {
+            background-color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1976D2;
+            margin-bottom: 15px;
+        }
+        
+        /* Servicios */
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: #1976D2;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* Testimonios */
+        .testimonials {
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(25, 118, 210, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #1976D2;
+            font-size: 0.9rem;
+        }
+        
+        /* Contacto */
+        .contact {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #ffc107;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #ffc107;
+            margin-right: 15px;
+            width: 40px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form .btn {
+            background-color: #ffc107;
+            color: #333;
+            width: 100%;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #1976D2;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ffc107;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #1976D2;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        /* Menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            left: 0;
+            top: 100%;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .dropbtn {
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dropbtn::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 5px;
+        }
+        
+        /* Login/Register */
+        .user-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .user-actions .btn {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        
+        .user-actions .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+        
+        .user-actions .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .service-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .user-actions {
+                margin-top: 15px;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-grid, .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-motorcycle" style="font-size: 2.5rem; margin-right: 10px; color: #ffc107;"></i>
+                    <h1>Servimoto</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li class="dropdown">
+                            <button class="dropbtn">Servicios</button>
+                            <div class="dropdown-content">
+                                <a href="#servicios">Mantenimiento General</a>
+                                <a href="#servicios">Reparación de Motor</a>
+                                <a href="#servicios">Sistema Eléctrico</a>
+                                <a href="#servicios">Pintura y Detallado</a>
+                                <a href="#servicios">Aceite</a>
+                                <a href="#servicios">Frenos</a>
+                                <a href="#servicios">Cubierta</a>
+                                <a href="#servicios">Filtro de Aire</a>
+                                <a href="#servicios">Transmisión</a>
+                                <a href="#servicios">Lubricación</a>
+                            </div>
+                        </li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <a href="#" class="btn btn-outline" id="loginBtn">Iniciar Sesión</a>
+                    <a href="#" class="btn" id="registerBtn">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>Todo para tu moto en un solo lugar</h2>
+            <p>Productos de calidad y servicios de reparación profesional para mantener tu moto en perfecto estado</p>
+            <a href="#productos" class="btn">Ver Productos</a>
+            <a href="#servicios" class="btn" style="background-color: #333; color: white; margin-left: 15px;">Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+                <p>Accesorios y repuestos de calidad para tu motocicleta</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1621814939078-6a16f454f1e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casco Motociclista">
+                    </div>
+                    <div class="product-info">
+                        <h3>Casco Integral Pro</h3>
+                        <p>Casco de alta seguridad con certificación internacional y visor anti-vaho</p>
+                        <div class="price">$89.99</div>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1625602223877-4b3b7a4d1b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guantes Motociclista">
+                    </div>
+                    <div class="product-info">
+                        <h3>Guantes Térmicos</h3>
+                        <p>Guantes con protección en nudillos y aislamiento térmico para todo clima</p>
+                        <div class="price">$49.99</div>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1571655664818-4d3c3e4e5b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aceite Motocicleta">
+                    </div>
+                    <div class="product-info">
+                        <h3>Aceite Sintético 10W-40</h3>
+                        <p>Aceite de alto rendimiento para motores de 4 tiempos, 1 litro</p>
+                        <div class="price">$19.99</div>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1629483057238-966c7caf3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Llantas Motocicleta">
+                    </div>
+                    <div class="product-info">
+                        <h3>Llantas Diablo Rosso III</h3>
+                        <p>Llantas de alto desempeño para deportivas, excelente agarre en seco y mojado</p>
+                        <div class="price">$199.99</div>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Reparaciones profesionales para mantener tu moto en óptimas condiciones</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Mantenimiento General</h3>
+                    <p>Cambio de aceite, filtros, ajuste de frenos, revisión completa de sistemas y puesta a punto.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Reparación de Motor</h3>
+                    <p>Diagnóstico y reparación de problemas mecánicos, ajuste de válvulas, reconstrucción de motores.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Sistema Eléctrico</h3>
+                    <p>Reparación de alternadores, arranques, instalación de accesorios eléctricos y diagnóstico de fallas.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Pintura y Detallado</h3>
+                    <p>Servicios de pintura profesional, detallado completo, pulido y restauración de carenados.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Aceite</h3>
+                    <p>Cambio de aceite y filtro para mantener tu motor en perfectas condiciones.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3>Frenos</h3>
+                    <p>Cambio de pastillas, discos y líquido de frenos para máxima seguridad.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <h3>Cubierta</h3>
+                    <p>Cambio y reparación de cubiertas para todo tipo de motocicletas.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Filtro de Aire</h3>
+                    <p>Cambio de filtro de aire para optimizar el rendimiento del motor.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Transmisión</h3>
+                    <p>Cambio de transmisión y ajuste de cadena para un funcionamiento suave.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-oil-well"></i>
+                    </div>
+                    <h3>Lubricación</h3>
+                    <p>Lubricación de todas las partes móviles para prolongar la vida útil de tu moto.</p>
+                    <a href="#contacto" class="btn">Solicitar Servicio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios Reales</h2>
+                <p>Lo que nuestros clientes dicen de nosotros</p>
+            </div>
+            <div class="testimonial-grid" id="testimonials-container">
+                <!-- Testimonios reales cargados por JavaScript -->
+            </div>
+            <div id="testimonial-form" style="margin-top: 50px; display: none;">
+                <h3 style="text-align: center; margin-bottom: 20px;">Deja tu opinión</h3>
+                <form id="opinion-form">
+                    <div class="form-group">
+                        <input type="text" id="user-name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="user-testimonial" placeholder="Tu opinión sobre nuestros servicios" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Opinión</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Contáctanos</h2>
+                <p>¿Tienes alguna pregunta o necesitas una reparación?</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Av. Motociclistas 123, Ciudad Motor</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+5492612059773</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>julietazavalaoficial@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 AM - 7:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Servimoto</h3>
+                    <p>Tu aliado confiable para todo lo relacionado con motocicletas. Productos de calidad y servicios de reparación profesional.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mantenimiento General</a></li>
+                        <li><a href="#">Reparación de Motor</a></li>
+                        <li><a href="#">Sistema Eléctrico</a></li>
+                        <li><a href="#">Pintura y Detallado</a></li>
+                        <li><a href="#">Cambio de Aceite</a></li>
+                        <li><a href="#">Cambio de Frenos</a></li>
+                        <li><a href="#">Reparación de Cubiertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Boletín Informativo</h3>
+                    <p>Suscríbete para recibir ofertas especiales y consejos para el cuidado de tu moto.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Tu correo electrónico" style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025  Servimoto. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <div id="loginModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <span class="close" style="float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #1976D2;">Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Contraseña" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Iniciar Sesión</button>
+                <p style="text-align: center; margin-top: 15px;">¿No tienes cuenta? <a href="#" id="switchToRegister" style="color: #1976D2; text-decoration: none;">Regístrate aquí</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <span class="close" style="float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #1976D2;">Registrarse</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Nombre completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Teléfono" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Contraseña" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Registrarse</button>
+                <p style="text-align: center; margin-top: 15px;">¿Ya tienes cuenta? <a href="#" id="switchToLogin" style="color: #1976D2; text-decoration: none;">Inicia sesión aquí</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        // Cargar testimonios
+        function loadTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            container.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const card = document.createElement('div');
+                card.className = 'testimonial-card';
+                card.innerHTML = `
+                    <div class="testimonial-text">
+                        <p>${testimonial.text}</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="${testimonial.image}" alt="${testimonial.name}">
+                        </div>
+                        <div class="author-info">
+                            <h4>${testimonial.name}</h4>
+                            <p>${testimonial.role}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+                this.reset();
+            });
+        }
+        
+        // Newsletter subscription
+        const newsletterForm = document.querySelector('.footer-column form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                if (emailInput.value) {
+                    alert(`¡Gracias por suscribirte con el correo: ${emailInput.value}!`);
+                    emailInput.value = '';
+                }
+            });
+        }
+        
+        // Login/Register modals
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const closeBtns = document.querySelectorAll('.close');
+        const switchToRegister = document.getElementById('switchToRegister');
+        const switchToLogin = document.getElementById('switchToLogin');
+        
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'block';
+        });
+        
+        registerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerModal.style.display = 'block';
+        });
+        
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'none';
+            });
+        });
+        
+        switchToRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'block';
+        });
+        
+        switchToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerModal.style.display = 'none';
+            loginModal.style.display = 'block';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (e.target === registerModal) {
+                registerModal.style.display = 'none';
+            }
+        });
+        
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Inicio de sesión exitoso. ¡Bienvenido!');
+            loginModal.style.display = 'none';
+            document.getElementById('testimonial-form').style.display = 'block';
+        });
+        
+        // Register form submission
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+            registerModal.style.display = 'none';
+        });
+        
+        // Opinion form submission
+        document.getElementById('opinion-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const testimonial = document.getElementById('user-testimonial').value;
+            
+            // Simular envío al servidor
+            alert('¡Gracias por tu opinión! Será publicada después de su aprobación.');
+            document.getElementById('user-name').value = '';
+            document.getElementById('user-testimonial').value = '';
+        });
+        
+        // Cargar testimonios al inicio
+        window.addEventListener('DOMContentLoaded', loadTestimonials);
+    </script>
+</body>
+</html>
