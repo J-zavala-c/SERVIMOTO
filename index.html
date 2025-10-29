@@ -156,7 +156,7 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
@@ -268,70 +268,6 @@
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: #333;
-        }
-        
-        /* Testimonios */
-        .testimonials {
-            background-color: white;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(25, 118, 210, 0.1);
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-            color: #555;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #1976D2;
-            font-size: 0.9rem;
         }
         
         /* Contacto */
@@ -633,6 +569,14 @@
 <body>
     <!-- Header -->
     <header>
+        <div class="user-actions">
+            <a href="Registro.html" class="btn btn-outline" id="loginBtn">Iniciar Sesión</a>
+            <a href="Registro.html" class="btn" id="registerBtn">Registrarse</a>
+            <a href="carrito.html" class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -658,14 +602,9 @@
                                 <a href="#servicios">Lubricación</a>
                             </div>
                         </li>
-                        <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
-                <div class="user-actions">
-                    <a href="#" class="btn btn-outline" id="loginBtn">Iniciar Sesión</a>
-                    <a href="#" class="btn" id="registerBtn">Registrarse</a>
-                </div>
             </div>
         </div>
     </header>
@@ -690,10 +629,10 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1621814939078-6a16f454f1e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casco Motociclista">
+                        <img src="Casco_StreetFighter.png" alt="Casco Streetfighter">
                     </div>
                     <div class="product-info">
-                        <h3>Casco Integral Pro</h3>
+                        <h3>Casco Streetfighter</h3>
                         <p>Casco de alta seguridad con certificación internacional y visor anti-vaho</p>
                         <div class="price">$89.99</div>
                         <a href="#" class="btn">Comprar Ahora</a>
@@ -701,7 +640,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1625602223877-4b3b7a4d1b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guantes Motociclista">
+                        <img src="guante invierno térmico.png" alt="Guantes invierno térmico">
                     </div>
                     <div class="product-info">
                         <h3>Guantes Térmicos</h3>
@@ -712,21 +651,21 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1571655664818-4d3c3e4e5b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aceite Motocicleta">
+                        <img src="aceite motul 4t mineral 20w50.png" alt="Aceite Motul 4t mineral 20w50">
                     </div>
                     <div class="product-info">
-                        <h3>Aceite Sintético 10W-40</h3>
-                        <p>Aceite de alto rendimiento para motores de 4 tiempos, 1 litro</p>
+                        <h3>Aceite Motul Mineral 20W-50</h3>
+                        <p>Aceite que protege y alarga la vida de tu motor</p>
                         <div class="price">$19.99</div>
                         <a href="#" class="btn">Comprar Ahora</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1629483057238-966c7caf3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Llantas Motocicleta">
+                        <img src="carrera sr 130 lt completa .jpg" alt="Llantas Pisteras">
                     </div>
                     <div class="product-info">
-                        <h3>Llantas Diablo Rosso III</h3>
+                        <h3>Llantas Pisteras SR 13OLT 70/20</h3>
                         <p>Llantas de alto desempeño para deportivas, excelente agarre en seco y mojado</p>
                         <div class="price">$199.99</div>
                         <a href="#" class="btn">Comprar Ahora</a>
@@ -828,31 +767,6 @@
         </div>
     </section>
 
-    <!-- Testimonios -->
-    <section class="testimonials" id="testimonios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimonios Reales</h2>
-                <p>Lo que nuestros clientes dicen de nosotros</p>
-            </div>
-            <div class="testimonial-grid" id="testimonials-container">
-                <!-- Testimonios reales cargados por JavaScript -->
-            </div>
-            <div id="testimonial-form" style="margin-top: 50px; display: none;">
-                <h3 style="text-align: center; margin-bottom: 20px;">Deja tu opinión</h3>
-                <form id="opinion-form">
-                    <div class="form-group">
-                        <input type="text" id="user-name" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="user-testimonial" placeholder="Tu opinión sobre nuestros servicios" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Opinión</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Contacto -->
     <section class="contact" id="contacto">
         <div class="container">
@@ -950,7 +864,6 @@
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -1025,33 +938,6 @@
     </div>
 
     <script>
-
-        // Cargar testimonios
-        function loadTestimonials() {
-            const container = document.getElementById('testimonials-container');
-            container.innerHTML = '';
-            
-            testimonials.forEach(testimonial => {
-                const card = document.createElement('div');
-                card.className = 'testimonial-card';
-                card.innerHTML = `
-                    <div class="testimonial-text">
-                        <p>${testimonial.text}</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="${testimonial.image}" alt="${testimonial.name}">
-                        </div>
-                        <div class="author-info">
-                            <h4>${testimonial.name}</h4>
-                            <p>${testimonial.role}</p>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

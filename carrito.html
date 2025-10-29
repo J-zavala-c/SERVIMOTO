@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Servimoto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Carrito */
+        .cart-container {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .cart-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .cart-header h1 {
+            color: #1976D2;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .cart-items {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-summary {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            gap: 20px;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: #1976D2;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .quantity-btn:hover {
+            background: #1976D2;
+            color: white;
+        }
+        
+        .cart-item-quantity {
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .remove-item {
+            color: #dc3545;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .remove-item:hover {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .cart-summary-items {
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+        }
+        
+        .continue-shopping {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background: transparent;
+            border: 2px solid #1976D2;
+            color: #1976D2;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .continue-shopping:hover {
+            background: #1976D2;
+            color: white;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-cart i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        
+        .empty-cart h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #1976D2;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ffc107;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #1976D2;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        /* Alertas */
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cart-item-controls {
+                justify-content: center;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cart-header h1 {
+                font-size: 2rem;
+            }
+            
+            .cart-item-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-motorcycle" style="font-size: 2.5rem; margin-right: 10px; color: #ffc107;"></i>
+                    <h1>Servimoto</h1>
+                </div>
+                <a href="index.html" class="btn">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrito de Compras -->
+    <section class="cart-container">
+        <div class="container">
+            <div class="cart-header">
+                <h1><i class="fas fa-shopping-cart me-2"></i>Mi Carrito</h1>
+                <p>Revisa y gestiona tus productos</p>
+            </div>
+
+            <div id="successAlert" class="alert alert-success" role="alert">
+                ¡Producto agregado al carrito correctamente!
+            </div>
+
+            <div id="errorAlert" class="alert alert-error" role="alert">
+                Ha ocurrido un error. Por favor, intenta nuevamente.
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div id="cartItemsContainer">
+                        <!-- Los items del carrito se cargan dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <h3 style="margin-bottom: 20px; color: #1976D2;">Resumen del Pedido</h3>
+                    
+                    <div class="cart-summary-items">
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Envío:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Descuento:</span>
+                            <span id="discount">-$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                    
+                    <button class="checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-credit-card me-2"></i>Proceder al Pago
+                    </button>
+                    
+                    <a href="index.html#productos" class="continue-shopping">
+                        <i class="fas fa-shopping-bag me-2"></i>Seguir Comprando
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Servimoto</h3>
+                    <p>Tu aliado confiable para todo lo relacionado con motocicletas. Productos de calidad y servicios de reparación profesional.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#testimonios">Testimonios</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mantenimiento General</a></li>
+                        <li><a href="#">Reparación de Motor</a></li>
+                        <li><a href="#">Sistema Eléctrico</a></li>
+                        <li><a href="#">Pintura y Detallado</a></li>
+                        <li><a href="#">Cambio de Aceite</a></li>
+                        <li><a href="#">Cambio de Frenos</a></li>
+                        <li><a href="#">Reparación de Cubiertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Av. Motociclistas 123, Ciudad Motor</p>
+                    <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@servimoto.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Servimoto. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
